@@ -1,0 +1,152 @@
+/* Variáveis de Cores e Configurações */
+:root{
+  --red-dark:#8b0000;
+  --red:#ff0000;
+  --bg:#f7f7f7;
+  --card:#ffffff;
+  --accent:#25d366;
+  --max-width:1100px;
+}
+
+/* Reset Básico e Fontes */
+*{box-sizing:border-box}
+/* Usando Montserrat, uma fonte mais moderna */
+body{font-family:'Montserrat', Arial, Helvetica, sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.5}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-weight:800;line-height:1.2}
+
+/* HEADER / NAV */
+header{
+  background:var(--red-dark);
+  color:#fff;
+  position:sticky;top:0;z-index:1200;
+  padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+header .brand{font-weight:800;font-size:22px;letter-spacing:-0.5px;display:flex;align-items:center}
+.header-logo{height:25px;width:auto;margin-right:8px} /* Estilo para a logo */
+
+nav a{color:#fff;margin-left:18px;font-weight:700;transition:opacity 0.2s}
+nav a:hover{opacity:0.8;text-decoration:none}
+/* Oculta a navegação no mobile */
+@media(max-width:768px){
+  nav{display:none}
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(90deg,var(--red-dark),var(--red));
+  color:#fff;text-align:center;padding:80px 18px 60px;
+}
+.hero h1{font-size:44px;margin:0 0 8px;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+.hero p{max-width:900px;margin:0 auto 24px;font-size:18px}
+.hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.btn-primary{background:#fff;color:var(--red-dark);padding:14px 24px;border-radius:30px;font-weight:800;text-transform:uppercase;transition:transform 0.2s, box-shadow 0.2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,0,0,0.3)}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 22px;border-radius:30px;font-weight:700;transition:background 0.2s}
+.btn-ghost:hover{background:rgba(255,255,255,0.1);text-decoration:none}
+
+/* WRAPPER */
+.wrap{max-width:var(--max-width);margin:0 auto;padding:60px 18px}
+
+/* SECTIONS */
+.section-title{color:var(--red-dark);font-size:32px;margin-bottom:14px;text-align:center}
+/* Layout de Grid para Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+
+.card{background:var(--card);padding:30px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:transform 0.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.15)}
+.card h3{margin:0 0 8px;color:var(--red-dark);font-size:20px}
+.card p{margin:0;color:#555}
+
+/* Estilo para os ícones dos serviços */
+.service-icon{
+  width:50px;height:50px;background:var(--red);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin-bottom:15px;
+  color:#fff;
+}
+.service-icon img{width:60%;height:60%;}
+
+/* PLANOS COM IMAGEM DE FUNDO */
+.plan-cards .card-bg{
+  padding:0; /* Remove o padding padrão do card */
+  overflow:hidden;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  min-height:350px; /* Garante altura mínima para ver a imagem */
+}
+/* Camada escura sobre a imagem */
+.card-overlay{
+  background:rgba(0, 0, 0, 0.7); /* Fundo escuro para destacar o texto */
+  padding:30px;
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#fff; /* Texto branco */
+}
+.card-overlay h3{color:#fff} /* Título branco */
+.card-overlay p{color:#ccc} /* Parágrafo mais claro */
+.plan-cards .card-bg:hover{transform:scale(1.03)} /* Plano com um destaque diferente */
+.price{font-size:32px;color:gold;font-weight:800;margin-top:10px;margin-bottom:10px}
+.card-overlay .price{color:#ffd700} /* Preço dourado sobre a imagem */
+.plan-cta{display:inline-block;margin-top:15px;background:var(--red-dark);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;transition:background 0.2s}
+.plan-cta:hover{background:var(--red)}
+
+/* CLIENTS & TESTIMONIALS */
+.clients{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.client{background:#fff;padding:12px 18px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08);font-weight:700;color:var(--red-dark)}
+
+.testimonials{display:grid;grid-template-columns:1fr;gap:14px;max-width:880px;margin:24px auto}
+.testi{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);border-left:4px solid var(--red-dark)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
+@media(max-width:920px){.contact-grid{grid-template-columns:1fr}}
+
+.contact-card{background:var(--card);padding:24px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.contact-card h4{margin-top:0;color:var(--red-dark);font-size:20px}
+
+.form-row{display:flex;gap:10px}
+.form-row input,.form-row textarea,input,select, textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:16px;font-family:inherit}
+textarea{min-height:120px;resize:vertical;padding-top:12px}
+
+.send-btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700;text-decoration:none;display:inline-block;transition:background 0.2s}
+.send-btn:hover{background:#1da851} /* Um verde um pouco mais escuro ao passar o mouse */
+
+/* MAP */
+.map-frame{width:100%;height:350px;border:0;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,0.08)}
+
+/* RODAPÉ */
+footer{background:#000;color:#ccc;padding:20px 18px;text-align:center;font-size:14px;line-height:1.6}
+footer a{color:#fff;text-decoration:none;font-weight:700;transition:color 0.2s}
+footer a:hover{color:var(--red)}
+
+/* WHATSAPP FIXO E INSTAGRAM FLOTANTES */
+.floating{
+  position:fixed;right:20px;bottom:20px;z-index:1400;display:flex;flex-direction:column;gap:15px;align-items:flex-end
+}
+.float-btn{
+  display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;text-decoration:none;color:#fff;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  transition:all 0.3s ease; /* Adicionado transição para movimento suave */
+}
+.float-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.3);
+  text-decoration:none;
+}
+.whats{background:var(--accent)}
+.insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+/* Esconde o texto do botão no mobile */
+@media(max-width:480px){
+  .whats{padding:12px}
+  .whats span{display:none}
+}
+
+/* small tweaks */
+.muted{color:#777;font-size:15px;line-height:1.6}
+.center{text-align:center}
